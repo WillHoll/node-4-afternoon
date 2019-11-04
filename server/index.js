@@ -16,6 +16,7 @@ app.use(session({
     secret: SESSION_SECRET
 }));
 app.use(checkForSession)
+app.use(express.static(`${__dirname}/../build`));
 // auth endpoints
 app.get('/api/user', authController.getUser)
 app.post('/api/login', authController.login)
